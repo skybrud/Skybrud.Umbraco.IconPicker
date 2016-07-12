@@ -1,0 +1,17 @@
+﻿{
+   propertyEditors: [{ 
+      alias: "Skybrud.IconPicker",
+      name: "Skybrud IconPicker",
+      editor: {
+        view: "~/App_Plugins/Skybrud.Umbraco.IconPicker/views/iconpicker.html",
+        hideLabel: false
+      }
+   }],
+   javascript: [
+     '~/App_Plugins/Skybrud.Umbraco.IconPicker/controllers/iconpicker.js',
+	 '~/App_Plugins/Skybrud.Umbraco.IconPicker/controllers/iconDialog.js',
+   ],
+   css: [
+		"~/App_Plugins/Skybrud.Umbraco.IconPicker/styles/iconPicker.css"
+	]
+}

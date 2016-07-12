@@ -1,0 +1,23 @@
+﻿<div class="SkybrudGridIconDialog" ng-controller="Skybrud.IconDialog.Controller">
+    <div class="umb-panel-header">
+
+        <div class="umb-el-wrap umb-panel-buttons">
+            <div class="span5">
+                <div class="form-search">
+                    <i class="icon-search"></i>
+                    <input type="text" ng-model="searchTerm" class="umb-search-field search-query ng-pristine ng-valid" placeholder="Filter...">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="umb-panel-body with-footer">
+        <ul class="umb-iconpicker" ng-class="color" ng-show="icons">
+            <li class="umb-iconpicker-item ng-scope" ng-repeat="icon in filtered = (icons | filter: searchTerm) track by $id(icon)">
+                <a href="#" title="icon-zoom-out" ng-click="selectIcon(icon)" prevent-default="">
+                    <img ng-src="{{icon}}" ng-if="icon" style="width: 46px;  font-size: 20px; color:#000;  margin-left: 7px;" />
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
