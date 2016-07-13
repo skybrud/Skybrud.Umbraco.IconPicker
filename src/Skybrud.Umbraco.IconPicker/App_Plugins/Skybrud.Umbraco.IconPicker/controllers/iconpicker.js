@@ -5,6 +5,7 @@
         dialogService.open({
             template: '/App_Plugins/Skybrud.Umbraco.IconPicker/Dialogs/iconDialog.html',
             dialogData: $scope.icons,
+            config: $scope.model.config,
             callback: function (data) {
                 $scope.model.value = data;
             }
