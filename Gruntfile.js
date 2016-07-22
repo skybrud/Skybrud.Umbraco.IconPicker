@@ -29,7 +29,8 @@ module.exports = function (grunt) {
 						cwd: projectRoot + 'bin/',
 						src: [
 							pkg.name + '.dll',
-							pkg.name + '.xml'
+							pkg.name + '.xml',
+							'Skybrud.WebApi.Json.dll'
 						],
 						dest: 'releases/temp/bin/'
 					}
