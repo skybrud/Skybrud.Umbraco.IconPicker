@@ -1,32 +1,34 @@
 ﻿{
-   propertyEditors: [{ 
-      alias: "Skybrud.IconPicker",
-      name: "Skybrud IconPicker",
-      editor: {
-        view: "~/App_Plugins/Skybrud.Umbraco.IconPicker/views/iconpicker.html",
-        hideLabel: false
+  "propertyEditors": [
+    {
+      "alias": "Skybrud.IconPicker",
+      "name": "Skybrud IconPicker",
+      "editor": {
+        "view": "~/App_Plugins/Skybrud.Umbraco.IconPicker/views/iconpicker.html",
+        "hideLabel": false
       },
-	  prevalues: {
-		fields: [
-			{
-				label: "Icon Path",
-				description: "Set the path for the icons. Ex: /svgs/icons/",
-				key: "iconpath",
-				view: "textstring",
-				validation: [
-					{
-						type: "Required"
-					}
-				]
-			}
-		]
-	  }
-   }],
-   javascript: [
-     '~/App_Plugins/Skybrud.Umbraco.IconPicker/controllers/iconpicker.js',
-	 '~/App_Plugins/Skybrud.Umbraco.IconPicker/controllers/iconDialog.js',
-   ],
-   css: [
-		"~/App_Plugins/Skybrud.Umbraco.IconPicker/styles/iconPicker.css"
-	]
+      "prevalues": {
+        "fields": [
+          {
+            "label": "Icon Path",
+            "description": "Set the path for the icons. Ex: /svgs/icons/",
+            "key": "iconpath",
+            "view": "textstring",
+            "validation": [
+              {
+                "type": "Required"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "javascript": [
+    "/App_Plugins/Skybrud.Umbraco.IconPicker/controllers/iconpicker.js",
+    "/App_Plugins/Skybrud.Umbraco.IconPicker/controllers/iconDialog.js"
+  ],
+  "css": [
+    "/App_Plugins/Skybrud.Umbraco.IconPicker/styles/iconPicker.css"
+  ]
 }
