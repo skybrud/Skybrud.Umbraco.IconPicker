@@ -1,15 +1,28 @@
 ﻿.SkybrudIconPicker {
 
     .display-icon-data {
-
         display: flex;
 
 
         .display-icon {
-            display: block;
             padding: 10px;
-            background-color: #ccc;
-            width: 57px;
+            width: 160px;
+            .umb-sortable-thumbnails__action {
+                background: #fff;
+                border: 1px solid #B3AFBE;
+                border-radius: 50%;
+
+                &:hover, &:focus {
+                    background: #efefef;
+                    background: #00AEA2;
+                    border-color: #00AEA2;
+                    color: white;
+                }
+            }
+        }
+
+        .umb-sortable-thumbnails li {
+            margin: 0;
         }
 
         .actions {
@@ -20,13 +33,52 @@
     }
 }
 
-.SkybrudGridIconDialog {
+.SkybrudIconPickerOverlay {
+ 
     .umb-iconpicker-item {
-        background-color: #ccc; 
-        border: solid 2px #fff
+        flex: initial;
+        width: 33%;
+        width: calc(100% / 3);
+        width: calc(100% / 4);
+        text-align: center;
+        svg {
+            width: 60%;
+        }
     }
+
+    .form-search {
+        input {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
 }
 
-.umb-iconpicker-item a:hover, .umb-iconpicker-item a:focus {
-    background: #cc0000;
-}
+/*.hello {
+
+    &.SkybrudIconPicker {
+        svg {
+            fill: red;
+        }
+
+        .display-icon-data .display-icon {
+            padding: 10px;
+            width: 300px;
+        }
+    }
+
+    &.SkybrudIconPickerOverlay {
+        svg {
+            fill: red;
+        }
+
+        .form-search {
+            margin-bottom: 20px;
+
+            input {
+                width: 100%;
+            }
+        }
+    }
+}*/

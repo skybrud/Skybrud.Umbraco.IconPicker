@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<language alias="da" intName="Danish" localName="dansk" lcid="6" culture="da-DK">
+<language alias="en_us" intName="English (US)" localName="English (US)" lcid="1033" culture="en-US">
     <creator>
         <name>René Pjengaard</name>
         <link>http://ww.skybrud.dk/</link>

@@ -4,14 +4,14 @@
       "alias": "Skybrud.IconPicker",
       "name": "Skybrud IconPicker",
       "editor": {
-        "view": "~/App_Plugins/Skybrud.Umbraco.IconPicker/views/iconpicker.html",
+        "view": "~/App_Plugins/Skybrud.Umbraco.IconPicker/Views/IconPicker.html",
         "hideLabel": false
       },
       "prevalues": {
         "fields": [
           {
             "label": "Icon Path",
-            "description": "Set the path for the icons. Ex: /svgs/icons/",
+            "description": "Set the path for the icons. Eg: <code>/svgs/icons/</code>",
             "key": "iconpath",
             "view": "textstring",
             "validation": [
@@ -19,16 +19,29 @@
                 "type": "Required"
               }
             ]
+          },
+          {
+            "label": "Remove \"fill\" attributes",
+            "description": "SVGs may contain <code>fill</code> attributes that specify a fill color for either the entire SVG or just parts of the SVG.<br /><br />When this option is selected, <code>fill</code> attributes will automatically be removed when the SVG is shown in the icon picker. This will allow you to style the <code>fill</code> with CSS.",
+            "key": "removeFillAttributes",
+            "view": "boolean"
+          },
+          {
+            "label": "CSS Class",
+            "description": "Specify a CSS class name that will be appended to both the property editor and it's overlay. This allows you to apply your own CSS rules to the icon picker.",
+            "key": "className",
+            "view": "textstring"
           }
         ]
       }
     }
   ],
   "javascript": [
-    "/App_Plugins/Skybrud.Umbraco.IconPicker/controllers/iconpicker.js",
-    "/App_Plugins/Skybrud.Umbraco.IconPicker/controllers/iconDialog.js"
+    "/App_Plugins/Skybrud.Umbraco.IconPicker/Scripts/Controllers/IconPicker.js",
+    "/App_Plugins/Skybrud.Umbraco.IconPicker/Scripts/Controllers/IconPickerOverlay.js",
+    "/App_Plugins/Skybrud.Umbraco.IconPicker/Scripts/Directives/Svg.js"
   ],
   "css": [
-    "/App_Plugins/Skybrud.Umbraco.IconPicker/styles/iconPicker.css"
+    "/App_Plugins/Skybrud.Umbraco.IconPicker/Styles/IconPicker.css"
   ]
 }
