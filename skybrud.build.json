@@ -1,0 +1,37 @@
+{
+  "tasks": {
+    "postBuild": [
+      {
+        "alias": "zip",
+        "destination": "releases/github/{packageName}.v{version}.zip",
+        "files": [
+          {
+            "source": "src/{packageName}/bin/Release/net45",
+            "destination": "bin/",
+            "patterns": [
+              "{packageName}.dll",
+              "{packageName}.xml"
+            ]
+          },
+          {
+            "source": "src",
+            "patterns": [
+              "LICENSE.html"
+            ]
+          },
+          {
+            "source": "src/{packageName}/App_Plugins/{packageName}",
+            "destination": "App_Plugins/{packageName}/",
+            "patterns": [
+              "**/*.js",
+              "**/*.css",
+              "**/*.html",
+              "**/*.xml",
+              "package.manifest"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
