@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Http;
+using AutoMapper.Internal;
 using Skybrud.WebApi.Json;
 using Umbraco.Core.IO;
 using Umbraco.Core.Models;
@@ -22,11 +23,15 @@ namespace Skybrud.Umbraco.IconPicker.Controllers.Api.BackOffice {
             var contentType = Services.ContentTypeService.GetContentType(contentTypeAlias);
 
             var property = contentType.PropertyTypes.FirstOrDefault(x => x.Alias == propertyAlias);
+            string path = "/svgs/icons/";
 
-            var prevalues = Services.DataTypeService.GetPreValuesCollectionByDataTypeId(property.DataTypeDefinitionId).PreValuesAsDictionary;
+            if (property != null)
+            {
+                var prevalues = Services.DataTypeService.GetPreValuesCollectionByDataTypeId(property.DataTypeDefinitionId).PreValuesAsDictionary;
 
-            string path = prevalues["iconpath"].Value.TrimStart('~');
-
+                path = prevalues["iconpath"].Value.TrimStart('~');
+            }
+            
             string folder = IOHelper.MapPath("~" + path);
             DirectoryInfo d = new DirectoryInfo(folder);
 
@@ -46,17 +51,22 @@ namespace Skybrud.Umbraco.IconPicker.Controllers.Api.BackOffice {
             var contentType = Services.ContentTypeService.GetContentType(contentTypeAlias);
 
             var property = contentType.PropertyTypes.FirstOrDefault(x => x.Alias == propertyAlias);
-
-            var prevalues = Services.DataTypeService.GetPreValuesCollectionByDataTypeId(property.DataTypeDefinitionId).PreValuesAsDictionary;
-
             bool removeFillAttributes = false;
-            if (prevalues.TryGetValue("removeFillAttributes", out PreValue pre1)){
-                removeFillAttributes = pre1.Value == "1";
-            }
+            string path = "/svgs/icons/";
 
-            string path = null;
-            if (prevalues.TryGetValue("iconpath", out PreValue pre2)) {
-                path = pre2.Value.TrimStart('~');
+            if (property != null)
+            {
+                var prevalues = Services.DataTypeService.GetPreValuesCollectionByDataTypeId(property.DataTypeDefinitionId).PreValuesAsDictionary;
+
+                if (prevalues.TryGetValue("removeFillAttributes", out PreValue pre1))
+                {
+                    removeFillAttributes = pre1.Value == "1";
+                }
+
+                if (prevalues.TryGetValue("iconpath", out PreValue pre2))
+                {
+                    path = pre2.Value.TrimStart('~');
+                }
             }
 
             string folder = IOHelper.MapPath("~" + path);
