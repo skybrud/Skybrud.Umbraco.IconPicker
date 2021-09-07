@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <Authors>Anders Bjerner, René Pjengaard Bank</Authors>
     <Company>Skybrud.dk</Company>
     <Description>Skybrud.Umbraco.IconPicker is a small package that adds a single property editor to Umbraco 7 that makes editors select between your own custom svg-icons.</Description>
-    <Copyright>Copyright © 2019</Copyright>
+    <Copyright>Copyright © 2021</Copyright>
   </PropertyGroup>
 
   <PropertyGroup>
